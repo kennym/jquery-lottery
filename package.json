@@ -1,31 +1,36 @@
 {
-  "name"            : "jquery-lottery",
-  "title"           : "jQuery Lottery",
-  "version"         : "0.1.0",
-  "homepage"        : "",
-  "author"          : {
-    "name"  : "Kenny Meyer",
-    "email" : "kenny@kennymeyer.net",
-    "url"   : "http://www.kennymeyer.net"
+  "name": "jquery-lottery",
+  "title": "jQuery Lottery",
+  "version": "0.2.0",
+  "homepage": "",
+  "author": {
+    "name": "Kenny Meyer",
+    "email": "kenny@kennymeyer.net",
+    "url": "http://www.kennymeyer.net"
   },
-  "repository" : {
-    "type" : "git",
-    "url"  : "git://github.com/kennym/jquery-lottery.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kennym/jquery-lottery.git"
   },
-  "description" : "Simple lottery fun",
-  "keywords": ["lottery", "jquery"],
-  "bugs" : {
-    "url" : "https://github.com/kennym/jquery-lottery/issues",
+  "description": "Simple lottery fun",
+  "keywords": [
+    "lottery",
+    "jquery"
+  ],
+  "bugs": {
     "url": "https://github.com/kennym/jquery-lottery/blob/master/LICENSE-MIT"
   },
-  "licenses": [{
-    "type": "MIT"
-  }],
-  "devDependencies" : {
-    "grunt"                : "0.3.15",
-    "grunt-coffee"         : "0.0.6",
-    "grunt-growl"          : "0.1.2",
-    "grunt-jasmine-runner" : "0.5.5"
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "0.3.15",
+    "grunt-coffee": "0.0.6",
+    "grunt-growl": "0.1.2",
+    "grunt-jasmine-runner": "0.5.5",
+    "grunt-bump": "0.0.1"
   },
   "scripts": {
     "test": "grunt travis"
