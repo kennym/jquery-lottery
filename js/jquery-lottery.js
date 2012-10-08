@@ -63,7 +63,7 @@ jQuery(function() {
       this.settings = $.extend({}, this.defaults, options);
       this.setState('ready');
       this.listItems = [];
-      _.each($(this.$element).find("li"), function(elem) {
+      $(this.$element).find("li").each(function(index, elem) {
         return _this.listItems.push($(elem).text());
       });
       this.$element.html($("<button class='start-lottery'>Start</button>"));

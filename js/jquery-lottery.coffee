@@ -73,7 +73,7 @@ jQuery ->
       @setState 'ready'
 
       @listItems = []
-      _.each $( @$element ).find("li"), (elem) =>
+      $( @$element ).find("li").each (index, elem) =>
         @listItems.push $(elem).text()
 
       @$element.html $("<button class='start-lottery'>Start</button>")
