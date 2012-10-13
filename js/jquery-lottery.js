@@ -6,6 +6,7 @@ jQuery(function() {
     state = '';
     this.timerHandle;
     this.mainDiv = $("<div class='lottery-plugin' />");
+    this.previousIndex = -1;
     this.settings = {};
     this.$element = $(element);
     this.setState = function(_state) {
@@ -31,10 +32,18 @@ jQuery(function() {
         return this.timerHandle = window.setInterval(function() {
           var randomIndex;
           _this.mainDiv.empty();
-          randomIndex = Math.floor(Math.random() * _this.listItems.length);
+          if (_this.previousIndex >= 0) {
+            randomIndex = _this.previousIndex;
+            while (randomIndex === _this.previousIndex) {
+              randomIndex = Math.floor(Math.random() * _this.listItems.length);
+            }
+          } else {
+            randomIndex = Math.floor(Math.random() * _this.listItems.length);
+          }
           _this.mainDiv.append($("<p class='lottery-option'>" + _this.listItems[randomIndex] + "</p>"));
+          _this.previousIndex = randomIndex;
           return console.log(randomIndex);
-        }, 100);
+        }, 150);
       }
     };
     this.stopLottery = function() {

@@ -11,10 +11,13 @@ jQuery ->
     # current state
     state = ''
 
-    # Timer
+    # The Timer instance
     @timerHandle
-    # Main
+    # HTML Placeholder element
     @mainDiv = $( "<div class='lottery-plugin' />")
+    # The index of the previous list item
+    # For a more efficient algorithm
+    @previousIndex = -1
 
     # plugin settings
     @settings = {}
@@ -42,10 +45,16 @@ jQuery ->
       else
         @timerHandle = window.setInterval =>
           @mainDiv.empty()
-          randomIndex = Math.floor(Math.random() * @listItems.length)
+          if @previousIndex >= 0
+            randomIndex = @previousIndex
+            while randomIndex == @previousIndex
+              randomIndex = Math.floor(Math.random() * @listItems.length)
+          else
+            randomIndex = Math.floor(Math.random() * @listItems.length)
           @mainDiv.append $("<p class='lottery-option'>" + @listItems[randomIndex] + "</p>")
+          @previousIndex = randomIndex
           console.log randomIndex
-        , 100
+        , 150
 
     @stopLottery = ->
       console.log? "Ended"
