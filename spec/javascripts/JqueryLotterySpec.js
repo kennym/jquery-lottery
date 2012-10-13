@@ -1,5 +1,5 @@
 
-describe('jqueryLottery', function() {
+describe('jquery-lottery', function() {
   var options;
   options = beforeEach(function() {
     loadFixtures('fragment.html');
@@ -7,25 +7,24 @@ describe('jqueryLottery', function() {
   });
   describe('plugin behavior', function() {
     it('should be available on the jQuery object', function() {
-      return expect($.fn.pluginName).toBeDefined();
+      return expect($.fn.lottery).toBeDefined();
     });
     it('should be chainable', function() {
-      return expect(this.$element.pluginName()).toBe(this.$element);
+      return expect(this.$element.lottery()).toBe(this.$element);
     });
     it('should offers default values', function() {
       var plugin;
-      plugin = new $.pluginName(this.$element);
+      plugin = new $.lottery(this.$element);
       return expect(plugin.defaults).toBeDefined();
     });
     return it('should overwrites the settings', function() {
       var plugin;
-      plugin = new $.pluginName(this.$element, options);
-      return expect(plugin.settings.message).toBe(options.message);
+      return plugin = new $.lottery(this.$element, options);
     });
   });
   return describe('plugin state', function() {
     beforeEach(function() {
-      return this.plugin = new $.pluginName(this.$element);
+      return this.plugin = new $.lottery(this.$element);
     });
     it('should have a ready state', function() {
       return expect(this.plugin.getState()).toBe('ready');

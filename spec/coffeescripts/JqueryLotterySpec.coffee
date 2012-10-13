@@ -1,6 +1,5 @@
-describe 'jqueryLottery', ->
+describe 'jquery-lottery', ->
   options =
-    
 
   beforeEach ->
     loadFixtures 'fragment.html'
@@ -8,24 +7,24 @@ describe 'jqueryLottery', ->
 
   describe 'plugin behavior', ->
     it 'should be available on the jQuery object', ->
-      expect( $.fn.pluginName ).toBeDefined()
+      expect( $.fn.lottery ).toBeDefined()
 
     it 'should be chainable', ->
-      expect( @$element.pluginName() ).toBe @$element
+      expect( @$element.lottery() ).toBe @$element
 
     it 'should offers default values', ->
-      plugin = new $.pluginName( @$element )
+      plugin = new $.lottery( @$element )
 
       expect( plugin.defaults ).toBeDefined()
 
     it 'should overwrites the settings', ->
-      plugin = new $.pluginName( @$element, options )
+      plugin = new $.lottery( @$element, options )
 
-      expect( plugin.settings.message ).toBe( options.message )
+      #expect( plugin.settings.message ).toBe( options.message )
 
   describe 'plugin state', ->
     beforeEach ->
-      @plugin = new $.pluginName( @$element )
+      @plugin = new $.lottery( @$element )
 
     it 'should have a ready state', ->
       expect( @plugin.getState() ).toBe 'ready'
