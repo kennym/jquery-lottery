@@ -1,8 +1,15 @@
 # jquery-lottery [![Build Status](https://secure.travis-ci.org/kennym/jquery-lottery.png?branch=master)](http://travis-ci.org/kennym/jquery-lottery)
 
-Simple lottery fun.
+"Create a lottery from a `ul` list" jQuery plugin.
 
-Underscore.js required.
+This plugin randomly chooses an element from a list of elements, and
+presents it in a lottery-like fashion.
+
+## Roadmap
+
+- Lottery animations
+- Configurable run limit of lottery
+- Specify triggers
 
 ## Version
 
